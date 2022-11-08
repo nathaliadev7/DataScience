@@ -17,7 +17,7 @@ df_cientistas = pd.DataFrame(cientistas)
 
 #df.iloc[1a linha: ultima linha,1a coluna:ultima coluna]
 
-#print(df_cientistas.iloc[0:2,0:3]) #Coloque o numero da primeira e da ultima linha, da primeira e da ultima coluna. ele corta o ultimo dos dois.
+print(df_cientistas.iloc[0:2,0:3]) #Coloque o numero da primeira e da ultima linha, da primeira e da ultima coluna. ele corta o ultimo dos dois.
 
 
 #Localizar um dado no DataFrame com Iloc:
