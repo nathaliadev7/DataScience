@@ -1,0 +1,19 @@
+import pandas as pd
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+
+#Alterar o valor de um dado do DataFrame:
+df_cientistas = pd.DataFrame(cientistas)
+#df.iloc[n0_linha,n0_coluna] = novo_dado(Numero)
+df_cientistas.iloc[1,1] = 76
+#df.iloc[nn0_linha,n0_coluna] = 'novo_dado (objeto) - Caso não seja um número, coloque as aspas
+df_cientistas.iloc[0:3] = 'Nathalia'
+#Sempre lembrando que o ultimo numero sempre que usado slices, são cortados, e o indice começa no zero
+
+
+print(df_cientistas)
