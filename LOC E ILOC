@@ -1,0 +1,26 @@
+#FILTROS LOC E ILOC
+import pandas as pd
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+df_cientistas = pd.DataFrame(cientistas)
+
+#loc() e iloc() são dois desses métodos. Eles são usados para fatiar dados no DataFrame pandas. 
+# Eles ajudam na seleção conveniente de dados do DataFrame. 
+# Eles são usados para filtrar os dados de acordo com algumas condições.
+
+
+#MÉTODO LOC:
+#df.loc[[1a linha,..., ultima_linha], ['col1,'col2']]
+
+print(df_cientistas.loc[[0, 1, 2],'NOME'])
+
+#METODO ILOC:
+
+#df.iloc[[1a linha,...,ultima_linha],['n0_col1','n0]]
+
+print(df_cientistas.iloc[[0,1,2,3], 1])
