@@ -1,0 +1,41 @@
+import pandas as pd
+#Operações em linhas e colunas do DataFrame: 
+
+#selecionando uma coluna ou várias colunas de um dataframe:
+
+#uma só: df['nome_coluna']
+#varias: df[['col1','col2']]
+
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+
+
+
+df_cientistas = pd.DataFrame(cientistas)
+
+#Apenas uma coluna:
+
+print(df['NOME'])
+
+#Duas ou mais colunas:
+
+print(df[['NOME', 'SEXO']])
+
+#Inserir uma coluna:
+
+#df.nomedodataframe['nome_coluna'] = [valor1,valor2,valor3]
+
+df_cientistas['Data_Obito'] = [123,456,789,234]
+print(df_cientistas)
+
+#Inserindo uma coluna com valores nulos:
+
+#df.nomedodataframe['nome_col'] = 0 
+
+df_cientistas['Teste'] = 0 
+print(df_cientistas)
