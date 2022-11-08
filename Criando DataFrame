@@ -1,0 +1,40 @@
+#ex2:
+dict = {1:'Laptop', 2:'Smartfone', 3:'Samrt Tv'}
+pd_ser = pd.Series(data = dict, index = [1,2,3])
+print(pd_ser)
+
+#Pandas DataFrame é uma estrutura de dados bidimensional, potencialmente heterogênea, com eixos rotulados (linhas e colunas).
+#  A DataFrame é uma estrutura de dados bidimensional, ou seja, os dados são alinhados de forma tabular em linhas e colunas. 
+# Pandas DataFrame consiste em três componentes principais, os dados, linhas e colunas.
+
+#Craindo um DataFrame:
+
+data = {
+'País': ['Bélgica', 'Índia', ' Brasil'],
+'Capital': ['Bruxelas', 'Nova Dahli', 'Brasília'],
+'População': [1234,4567,6789]
+}
+
+df = pd.DataFrame(data, columns = ['País', 'Capital', 'População'])
+print(df)
+
+#Criação de um DataFrame a partir de um dicionario:
+
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df_cientistas = pd.DataFrame(cientistas)
+print(df_cientistas)
+
+#Exercício: Construa o data Frame (df_cars) a partir de um dicionario contendo:
+#'Cars':['Honda','Toyota', ' Ford', 'Tesla'] e 'Type':['a','b','e,'f']
+
+dict = {
+    'Cars':['Honda','Toyota', ' Ford', 'Tesla'],
+    'Type':['a','b','e','f']
+}
+df_cars = pd.DataFrame(dict)
+print(df_cars)
