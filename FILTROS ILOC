@@ -1,0 +1,27 @@
+import pandas as pd
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+
+
+df_cientistas = pd.DataFrame(cientistas)
+
+#FILTROS ILOC:
+#O iloc é exclusivo na ultima linha e coluna..
+
+#Selecionando linhas e colunas:
+
+#df.iloc[1a linha: ultima linha,1a coluna:ultima coluna]
+
+#print(df_cientistas.iloc[0:2,0:3]) #Coloque o numero da primeira e da ultima linha, da primeira e da ultima coluna. ele corta o ultimo dos dois.
+
+
+#Localizar um dado no DataFrame com Iloc:
+
+#df.iloc[n0_linha,n0_coluna]
+
+print(df_cientistas.iloc[2,1]) #Vai mostrar o dado que está na segunda linha da primeira coluna, lembrando que o indice comeca em zero.
