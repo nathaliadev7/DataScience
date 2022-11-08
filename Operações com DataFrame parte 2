@@ -1,0 +1,29 @@
+import pandas as pd
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+
+
+df_cientistas = pd.DataFrame(cientistas)
+
+
+#Operações em linhas e colunas do DataFrame PARTE 2:
+
+#Inserindo uma coluna de outra maneira: 
+
+df_cientistas.insert(3,'homem/mulher',['homem', 'homem', 'mulher', 'homem'])
+print(df_cientistas)
+
+#Removendo uma coluna: 
+
+df1 = df.drop(['SEXO'], axis=1)
+print(df1)
+
+#Na hora de printar, printe a variável que voce criou, nesse caso, o df1!
+
+#O parâmetro axis definie se a comparação vai ser entre linhas ou entre colunas. Se axis = 0 ele irá comparar os valores presentes nas linhas e ordená-las, 
+# já se axis = 1 ele irá comparar os valores presentes em colunas e, da mesma forma, irá ordená-las.
