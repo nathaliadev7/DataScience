@@ -1,0 +1,32 @@
+import pandas as pd
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+
+
+df_cientistas = pd.DataFrame(cientistas)
+
+
+#FILTRO LOC: 
+#Selecionando uma linha e uma coluna:
+
+#df.loc[n0_linha,'nome_coluna']
+
+print(df_cientistas.loc[1,'NOME']) #vAI PRINTAR O DADO QUE ESTIVER NA POSIÇÃO 1, DA COLUNA NOME
+
+#Selecionando UMA linhas e  VARIAS colunas: 
+
+print(df_cientistas.loc[0:3,['NOME','SEXO']]) #Vai printar todos os dados entre o intervalo 0 e 3 das duas colunas selecionadas;
+
+
+#Selecionando VARIAS linhas e UMA coluna:
+
+print(df_cientistas.loc[0:3,'NOME'])
+
+#Selecionando VÁRIAS linhas e VÁRIAS colunas:
+
+print(df_cientistas.loc[0:2,['NOME', 'DATA_NASCIMENTO']])
