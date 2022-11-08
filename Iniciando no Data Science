@@ -1,0 +1,7 @@
+#importando biblioteca pandas:
+import pandas as pd
+
+#como construir uma 'Pandas - Series' a partir de um dicionário com index
+dict = {'a':1, 'b':2, 'c':3}
+pd_ser = pd.Series(data = dict, index = ['a', 'b', 'c'])
+print(pd_ser)
