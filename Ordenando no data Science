@@ -1,0 +1,27 @@
+import pandas as pd
+
+cientistas = {
+    'NOME':['Albert Einstein', 'Isaac Newton','Marie Curie','Richard Feyman'],
+    'DATA_NASCIMENTO': ['14/03/1979', '04/01/1643', '07/11/1867', '11/05/1918'],
+    'SEXO': ['Masculino', 'Masculino', 'Feminino', 'Masculino']
+}
+
+df = pd.DataFrame(cientistas, columns= ['NOME', 'DATA_NASCIMENTO', 'SEXO'])
+df_cientistas = pd.DataFrame(cientistas)
+
+
+#Ordenando valores em uma coluna:
+ #Ordenando valores em uma ordem crescente:
+ #df = df.sort_values('Nome_coluna',ascending = TRUE)
+ #Esta função altera a ordem dos valores em uma coluna classificando-a.
+ #  Portanto, podemos usar isso para mostrar o dataset de acordo com nossa necessidade, 
+ # classificando em ordem crescente ou decrescente.
+
+df_cientistas =df_cientistas.sort_values('DATA_NASCIMENTO',ascending=True)
+print(df_cientistas)
+
+#Ordenando em ordem decrescente:
+#df = df.sort_values('Nome_coluna',ascending = false)
+
+df_cientistas =df_cientistas.sort_values('NOME',ascending=False)
+print(df_cientistas)
