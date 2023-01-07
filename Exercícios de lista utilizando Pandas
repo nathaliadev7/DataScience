@@ -1,0 +1,48 @@
+#11. Crie uma lista com os nomes dos super-heróis que devem participar da Iniciativa Vingadores seguindo a ordem: 
+#• Homem de Ferro 
+# Capitão América 
+#• Thor 
+#• Hulk 
+#• Viúva Negra 
+#• Gavião Arqueiro
+#a. Agora, inclua o Homem-Aranha no final da lista e imprima em qual posição está o Thor.
+#b. Infelizmente a Viúva Negra e o Homem de Ferro não fazem mais parte da Iniciativa Vingadores, então retire-os da lista.
+
+
+
+
+
+
+
+
+
+import pandas as pd
+import numpy as np
+
+
+lista_de_Super_Herois=['Homem de ferro','Capitão América', 'Deus do Trovão','Hulk','Viúva Negra','Gavião Arqueiro']
+Nomes_verdadeiros=['Tony Stark','Steve Rogers','Thor','Bruce Banner','Natasha Romanoff','Clint Barton']
+
+
+lista_de_Super_Herois.append('Homem  Aranha')
+Nomes_verdadeiros.append('Peter Parker')
+
+
+
+dict={'Nomes dos Herois': lista_de_Super_Herois,
+      'Nome Real ':Nomes_verdadeiros}
+
+
+
+tabela=pd.DataFrame(dict)
+
+
+
+
+
+
+
+
+
+print(tabela)
+print(Nomes_verdadeiros.index('Thor'))
