@@ -1,0 +1,49 @@
+#10. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule e armazene a média. Armazene também a situação do aluno: 1- Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem contendo as notas, a média e a situação de cada aluno. Utilize quantas listas forem necessárias para armazenar os dados.
+
+
+import pandas as pd
+import numpy as np
+
+#E se ao invés de criar com um dicionário, criarmos com listas?
+
+lista_de_nomes=[]
+notas1=[]
+notas2=[]
+medias=[]
+situacaoatual=[]
+
+
+
+for i in range(15):
+    nome_do_aluno=input('Digite o nome do aluno:')
+    nota1=float(input(f' DIgite a primeira nota de {nome_do_aluno}: '))
+    nota2=float(input(f' Digite a segunda nota de {nome_do_aluno}: '))
+    lista_de_nomes.append(nome_do_aluno)
+    notas1.append(nota1)
+    notas2.append(nota2)
+    soma=nota1+nota2
+    media=soma/2
+    medias.append(media)
+    if media>7:
+        situacao='aprovado'
+        situacaoatual.append(situacao)
+    elif media>5 and media<7:
+        situacao='Em recuperação'
+        situacaoatual.append(situacao)
+    else:
+        situacao='reprovado'
+        situacaoatual.append(situacao)
+        
+    
+
+dict={'Nome do aluno': lista_de_nomes,
+      'Nota 1': notas1,
+      'Nota 2': notas2,
+      'Medias': medias,
+      'Situação Atual': situacaoatual}
+
+Tabela_de_informacoes=pd.DataFrame(dict)
+Tabela_de_informacoes=Tabela_de_informacoes.sort_values('Medias',ascending=True)
+print(Tabela_de_informacoes)
+
+
