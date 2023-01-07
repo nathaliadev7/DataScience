@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x = [1,2,3,4,5]
+y = [2,12,9,18,10]
+
+#plt.scatter(x,y)#vai dar os pontos
+#plt.show()#vai mostrar 
+
+n = len(x)#Esse é o comprimento de x
+
+#Aplicando a formula
+soma1=sum(np.multiply(x,y))
+soma2=sum(x)
+soma3=sum(np.multiply(x,x))
+soma4=sum(y)
+
+a=(soma2*soma4-n*soma1)/((soma2)**2-n*soma3)
+b=(soma1*soma2-soma3*soma4)/((soma2)**2-n*soma3)
+
+print('a =',a)
+print('b =', b)
+print(f'y={a:.2f}.x+{b:.2f}')
+
+#Vamos dizer a predição(E quando x for 6? qual o valor?)
+#Vamos igualar o x a seis e utilizar a formula geral, que é y = a.x+b, depois é só printar;
+x = 6
+y =a*x+b
+print(y)
+
+#Função solve(A,B) resolve
