@@ -1,0 +1,74 @@
+import pandas as pd
+import numpy as np
+#criação do dataframe
+df=pd.read_csv('dados_teste.csv')
+df.head()
+df.info()
+
+
+#declarando quem são as variaveis
+x= df[['ano','preço']] #variavel dependente
+y =df['quantidade']  #variavel independente
+print(df)
+
+#Implantação do metodo de regressão linear:
+from sklearn.model_selection import train_test_split
+#Dividindo 70% para treino e 30% para teste
+x_treinamento, x_teste, y_treinamento, y_teste = train_test_split(x,y, test_size = 0.3)
+from sklearn import metrics
+from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LinearRegression#importando o modelo de regressao, seja linear, logistica ou redes neurais
+Funcao_Regressao = LinearRegression()
+Funcao_Regressao.fit(x_treinamento, y_treinamento)#O fit é sempre com o treinamento primeiro, depois faça o teste
+
+#Fazendo as previsões com o teste
+
+previsoes = Funcao_Regressao.predict(x_teste)
+#fazendo o cálculo da acurácia do modelo
+rmse=np.sqrt(metrics.mean_squared_error(y_teste,previsoes))#vendo o erro entre a reta com o ponto
+print('a acurácia foi de:',rmse)
+
+
+#Fazendo previsões
+novo_dado=[2023,2.10]
+print(Funcao_Regressao.predict([novo_dado]))
+
+import matplotlib.pyplot as plt
+x1=df['preço']
+y1=df['quantidade']
+plt.scatter(x1, y1, color='blue')
+plt.show()
+
+
+x = df.iloc[:, 1:2].values
+y = df.iloc[:, 2:3].values
+
+print(x), print(y)
+
+
+from sklearn.model_selection import train_test_split
+x_treinamento, x_teste, y_treinamento, y_teste = train_test_split(x, y, test_size = 0.3)
+from sklearn.linear_model import LinearRegression
+reg_lin = LinearRegression()
+reg_lin.fit(x_treinamento, y_treinamento)
+
+previsoes = reg_lin.predict(x_teste)
+#calculando a métrica
+from sklearn.metrics import mean_squared_error
+mse = mean_squared_error(y_teste, previsoes)
+
+print('mse=', mse)
+print("a= %.5f" % reg_lin.coef_)#coeficiente angular
+print('b= %.5f' % reg_lin.intercept_)#coeficiente linear
+
+
+#fazendo previsões
+print(reg_lin.predict ([[2.15]]))
+     
+
+#fazendo um plot
+import matplotlib.pyplot as plt
+plt.scatter(x, y, color='blue')
+plt.plot(x, reg_lin.predict(x), color = 'red')
+plt.show()
+     
