@@ -1,0 +1,51 @@
+'''6°: Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo:
+Média de aproveitamento / Conceito
+Entre 9.0 e 10.0 / A
+Entre 7.5 e 9.0 / B
+Entre 6.0 e 7.5 / C
+Entre 4.0 e 6.0 / D
+Entre 4.0 e 0 / E'''
+import pandas as pd
+import numpy as np
+
+Nomes_dos_alunos=[]
+primeiras_notas=[]
+segundas_notas=[]
+Media_dos_alunos=[]
+lista_de_conceitos=[]
+Quantidade_de_alunos=int(input('Digite a quantidade de aluns que gostaria de cadastrar no sistemas de notas: '))
+for i in range(Quantidade_de_alunos):
+    Aluno=input('Digite o nome do aluno que quer cadastrar: ')
+    nota_1=float(input(f'Digite a primeira nota de {Aluno}: '))
+    nota_2=float(input(f'Digite a segunda nota de {Aluno}: '))
+    soma=nota_1+nota_2
+    media=soma/2
+    Nomes_dos_alunos.append(Aluno)
+    Media_dos_alunos.append(media)
+    primeiras_notas.append(nota_1)
+    segundas_notas.append(nota_2)
+    if media>=9 and media<=10:
+        Conceito='A'
+        lista_de_conceitos.append(Conceito)
+    elif media>=7.5 and media<=9:
+        Conceito='B'
+        lista_de_conceitos.append(Conceito)
+    elif media>=6 and media<=7.5:
+        Conceito='C'
+        lista_de_conceitos.append(Conceito)
+    elif media>=4 and media<=6:
+        Conceito='D'
+        lista_de_conceitos.append(Conceito)
+    elif media>=0 and media<=4:
+        Conceito='E'
+        lista_de_conceitos.append(Conceito)
+dict={'Nomes': Nomes_dos_alunos,
+      'Primeira Nota':primeiras_notas,
+      'Segunda Nota': segundas_notas,
+      'Medias': Media_dos_alunos,
+      'Conceitos':lista_de_conceitos
+    
+}
+        
+tabela_de_dados=pd.DataFrame(dict)
+print(tabela_de_dados)   
